@@ -1,4 +1,4 @@
-package com.ahnndroid.springdatajpastudy.account;
+package com.ahnndroid.springdatajpastudy.hibernate_examples.post;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,15 +11,15 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Study {
+public class Comment {
 
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	private String name;
+	private String content;
 	
 	// 관계의 주인
 	@ManyToOne
-	private Account owner;
+	private Post post;
 }

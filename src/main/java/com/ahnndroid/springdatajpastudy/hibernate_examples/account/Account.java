@@ -1,4 +1,4 @@
-package com.ahnndroid.springdatajpastudy.account;
+package com.ahnndroid.springdatajpastudy.hibernate_examples.account;
 
 import java.util.Date;
 import java.util.HashSet;

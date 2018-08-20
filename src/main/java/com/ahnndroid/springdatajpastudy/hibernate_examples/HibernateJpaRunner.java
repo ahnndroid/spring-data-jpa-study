@@ -1,4 +1,4 @@
-package com.ahnndroid.springdatajpastudy;
+package com.ahnndroid.springdatajpastudy.hibernate_examples;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -9,14 +9,14 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ahnndroid.springdatajpastudy.account.Account;
-import com.ahnndroid.springdatajpastudy.account.Study;
-import com.ahnndroid.springdatajpastudy.post.Comment;
-import com.ahnndroid.springdatajpastudy.post.Post;
+import com.ahnndroid.springdatajpastudy.hibernate_examples.account.Account;
+import com.ahnndroid.springdatajpastudy.hibernate_examples.account.Study;
+import com.ahnndroid.springdatajpastudy.hibernate_examples.post.Comment;
+import com.ahnndroid.springdatajpastudy.hibernate_examples.post.Post;
 
-@Component
-@Transactional
-public class JpaRunner implements ApplicationRunner {
+//@Component
+//@Transactional
+public class HibernateJpaRunner implements ApplicationRunner {
 	
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -48,6 +48,10 @@ public class JpaRunner implements ApplicationRunner {
 		 */
 		Post post = (Post) session.load(Post.class, 5L);
 		session.delete(post);
+	}
+	
+	private void hibernateRun() {
+		
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.ahnndroid.springdatajpastudy.post;
+package com.ahnndroid.springdatajpastudy.hibernate_examples.post;
 
 import java.util.HashSet;
 import java.util.Set;
