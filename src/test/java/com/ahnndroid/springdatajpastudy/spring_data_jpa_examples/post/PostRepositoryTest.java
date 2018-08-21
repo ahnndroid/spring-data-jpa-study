@@ -3,6 +3,7 @@ package com.ahnndroid.springdatajpastudy.spring_data_jpa_examples.post;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,7 +24,7 @@ public class PostRepositoryTest {
 	private PostRepository postRepository;
 	
 	@Test
-	public void crudRepository() {
+	public void test001_레파지토리_테스트() {
 		// Given
 		Post post = new Post();
 		post.setTitle("hello spring boot common");		
@@ -66,5 +67,22 @@ public class PostRepositoryTest {
 		
 		// Then
 		assertThat(count).isEqualTo(1);
+		
+	}
+	
+	
+	@Test
+	public void test002_Null처리() {
+		// When
+		Optional<Post> byId = postRepository.findById(100L);
+		// Then
+		assertThat(byId).isEmpty();
+		
+		
+		// When
+		// Spring Data JPA에서는 리턴하는 Collection 객체는 비어있을 경우 null이 아닌 빈 Collection 객체를 리턴해 줌.
+		List<Post> posts = postRepository.findAll();
+		// Then
+		assertThat(posts).isEmpty();
 	}
 }
